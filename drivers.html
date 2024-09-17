@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج معلومات السائق - Heetch</title>
+    <style>
+        /* تصميم الصفحة بالكامل */
+        body {
+            font-family: 'Arial', sans-serif; /* خط عصري */
+            margin: 0;
+            padding: 0;
+            background-color: #003399; /* خلفية زرقاء جولوا */
+            color: #fff; /* لون النص أبيض */
+            direction: rtl; /* النص من اليمين إلى اليسار */
+        }
+
+        /* الحاوية الرئيسية للنموذج */
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background-color: #ffffff; /* خلفية بيضاء للنموذج */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* تنسيق العناوين */
+        h2 {
+            color: #ff0066; /* لون العنوان وردي */
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* تسميات الحقول */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ff0066; /* لون التسميات وردي */
+        }
+
+        /* تنسيق حقول الإدخال وتحميل الملفات */
+        input[type="text"], input[type="email"], input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #003399; /* حدود زرقاء جولوا */
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            color: #000; /* لون النص أسود */
+            transition: border-color 0.3s ease;
+        }
+
+        /* حالة التركيز لحقول الإدخال */
+        input[type="text"]:focus, input[type="email"]:focus, input[type="file"]:focus {
+            border-color: #ff0066; /* حدود وردية عند التركيز */
+            outline: none;
+            background-color: #fff;
+        }
+
+        /* تنسيق زر الإرسال */
+        input[type="submit"] {
+            width: 100%;
+            background-color: #ff0066; /* خلفية الزر وردية */
+            color: white;
+            padding: 14px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* تأثير التمرير فوق زر الإرسال */
+        input[type="submit"]:hover {
+            background-color: #ff3388; /* لون وردي أغمق عند التمرير */
+        }
+
+        /* وصف الحقول الاختيارية */
+        .optional {
+            font-style: italic;
+            color: #777;
+        }
+
+        /* تنسيق مجموعة الحقول */
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        /* تنسيق الشعار */
+        img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- شعار Heetch -->
+        <img src="https://images.sftcdn.net/images/t_app-icon-m/p/6abf23ae-cf66-4c64-9364-9a35c104bce2/1110923574/heetch-pro-for-drivers-logo" alt="شعار Heetch">
+
+        <h2>نموذج معلومات السائق</h2>
+
+        <form id="driverForm" action="https://script.google.com/a/macros/heetch.com/s/AKfycbw0J-7eJdhfg51k3z1BUUx6g1OxyERlwy-U-Bgqpr02tT4TxVL2VHV2quzA42VouHKtOg/exec" method="post" enctype="multipart/form-data">
+            
+            <!-- الاسم الكامل، رقم الهاتف، والبريد الإلكتروني مطلوب -->
+            <div class="input-group">
+                <label for="full-name">الاسم الكامل:</label>
+                <input type="text" id="full-name" name="full_name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="phone-number">رقم الهاتف:</label>
+                <input type="text" id="phone-number" name="phone_number" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- الحقول الاختيارية لتحميل المستندات -->
+            <div class="input-group">
+                <label for="license-front">الوجه الأمامي لرخصة القيادة (اختياري):</label>
+                <input type="file" id="license-front" name="license_recto" accept="image/*">
+            </div>
+
+            <div class="input-group">
+                <label for="license-back">الوجه الخلفي لرخصة القيادة (اختياري):</label>
+                <input type="file" id="license-back" name="license_verso" accept="image/*">
+            </div>
+
+            <div class="input-group">
+                <label for="profile-photo">صورة الملف الشخصي (اختياري):</label>
+                <input type="file" id="profile-photo" name="profile_photo" accept="image/*">
+            </div>
+
+            <div class="input-group">
+                <label for="car-registration">بطاقة تسجيل السيارة (اختياري):</label>
+                <input type="file" id="car-registration" name="car_registration" accept="image/*">
+            </div>
+
+            <div class="input-group">
+                <label for="car-insurance">تأمين السيارة (اختياري):</label>
+                <input type="file" id="car-insurance" name="car_insurance" accept="image/*">
+            </div>
+
+            <div class="input-group">
+                <label for="criminal-record">السجل الجنائي (اختياري):</label>
+                <input type="file" id="criminal-record" name="criminal_record" accept="image/*">
+            </div>
+
+            <div class="input-group">
+                <label for="residence-proof">إثبات الإقامة (اختياري):</label>
+                <input type="file" id="residence-proof" name="residence_proof" accept="image/*">
+            </div>
+
+            <div class="input-group">
+                <label for="car-photo">صورة السيارة (اختياري):</label>
+                <input type="file" id="car-photo" name="car_photo" accept="image/*">
+            </div>
+
+            <div class="input-group">
+                <label for="tech-control">صورة الفحص الفني (اختياري):</label>
+                <input type="file" id="tech-control" name="tech_control" accept="image/*">
+            </div>
+
+            <div class="input-group">
+                <label for="procuration">تفويض (اختياري):</label>
+                <input type="file" id="procuration" name="procuration" accept="image/*">
+            </div>
+
+            <input type="submit" value="إرسال">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('driverForm').addEventListener('submit', function(event) {
+            alert('تم إرسال النموذج بنجاح!');
+        });
+    </script>
+
+</body>
+</html>
